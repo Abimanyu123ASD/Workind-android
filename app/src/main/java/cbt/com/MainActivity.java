@@ -17,6 +17,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity {
     private WebView mWebView;
@@ -109,13 +111,17 @@ public class MainActivity extends AppCompatActivity {
                     String base64Content = base64Data.split(",")[1];
                     byte[] fileData = Base64.decode(base64Content, Base64.DEFAULT);
 
-                    // Create a temporary file in cache
-                    String tempFile = "file_" + System.currentTimeMillis() + ".tmp";
-                    startDownload("data:" + getContentType(fileName) + ";base64," +
-                                    Base64.encodeToString(fileData, Base64.DEFAULT),
-                            USER_AGENT, fileName, getContentType(fileName));
+                    // Write file to external storage directly
+                    java.io.File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                    java.io.File file = new java.io.File(downloadsDir, fileName);
+                    
+                    java.io.FileOutputStream fos = new java.io.FileOutputStream(file);
+                    fos.write(fileData);
+                    fos.close();
+                    
+                    mainHandler.post(() -> showToast("Downloaded: " + fileName));
                 } catch (Exception e) {
-                    showToast("Download failed");
+                    mainHandler.post(() -> showToast("Download failed: " + e.getMessage()));
                 }
             });
         }
