@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.agentbox" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#0A4D82</item>
+        <item name="colorPrimaryVariant">#0A4D82</item>
+        <item name="colorOnPrimary">#0A4D82</item>
+
+        <!-- Secondary branding color -->
+        <item name="colorSecondary">#0A4D82</item>
+        <item name="colorSecondaryVariant">#0A4D82</item>
+        <item name="colorOnSecondary">#0A4D82</item>
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+</resources>

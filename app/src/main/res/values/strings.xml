@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AYP</string>
+    <string name="mh_logo">AYP logo</string>
+    <string name="err_image">Internet error</string>
+    <string name="err_text">Network Error</string>
+
+    <string name="retry">Retry</string>
+    <string name="uname">Username</string>
+    <string name="pwd">Password</string>
+    <string name="submit">Submit</string>
+</resources>

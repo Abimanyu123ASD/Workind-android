@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.agentbox" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary branding color -->
+        <item name="colorPrimary">#0A4D82</item>
+        <item name="colorPrimaryVariant">#0A4D82</item>
+        <item name="colorOnPrimary">#0A4D82</item>
+
+        <!-- Secondary branding color -->
+        <item name="colorSecondary">#0A4D82</item>
+        <item name="colorSecondaryVariant">#0A4D82</item>
+        <item name="colorOnSecondary">#0A4D82</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.agentbox" parent="Base.Theme.agentbox" />
+</resources>
